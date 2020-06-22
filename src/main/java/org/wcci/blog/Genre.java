@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import java.util.Set;
 
 
-public class Category {
+public class Genre {
     @Id
     @GeneratedValue
     private Long id;
@@ -14,9 +14,9 @@ public class Category {
     private Set<Post> posts;
 
 
-    protected Category(){}
+    protected Genre(){}
 
-    public Category( String name, Set<Post> posts){
+    public Genre(String name, Set<Post> posts){
 
         this.name = name;
         this.posts = posts;
