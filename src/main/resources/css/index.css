@@ -1,116 +1,53 @@
 /* SETUP */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 :root {
-    --color1: red;
-    --color2: blue;
-    --color3: yellow;
-    --color4: green;
-    --color5: orange;
-    --font1: ;
-    --font2: ;
-    font-size: 12pt;
-}
-
-/* PAGE LAYOUT */
-
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-header {
-    background-color: var(--color1);
-    height: 140px;
-    display: flex;
-    justify-items: center;
-}
-
-main {
-    background-color: var(--color2);
-    height: 800px;
-    display: flex;
-    flex-direction: row;
-}
-
-article {
-    width: 80%;
-    height: 100%;
-    background-color: var(--color4);
-}
-
-aside {
-    width: 20%;
-    min-width: 150px;
-    height: 100%;
-    background-color: var(--color5);
-    text-align: center;
-}
-
-footer {
-    background-color: var(--color3);
-    height: 100px;
-}
-
-/* HEADER */
-
-.logo {
-    margin: 0 auto;
-    position: relative;
-    padding: 20px;
-}
-
-.logo-pic {
-    height: 100px;
-    width: auto;
-    position: absolute;
-    margin-left: -300px;
-}
-
-.logo-text {
-    font-size: 40pt;
-    position: absolute;
-    margin-left: -200px;
-    margin-top: 15px;
+  --color1: #032430;
+  --color2: #0d1553;
+  --color3: #31a0fe;
+  --color4: #89e5f6;
+  --color5: #d6daff;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 /* ARTICLE */
 
-.blog-title {
-    text-align: center;
-    font-size: 25pt;
-    margin-top: 25px;
-}
-
-.container {
-    padding: 50px;
+.main-img {
+  width: auto;
+  height: 75vh;
 }
 
 /* ASIDE */
 
-.blog-list-title {
-    text-decoration: underline;
+aside {
+  min-width: 500px;
+  padding: 50px;
+  font-size: 20pt;
 }
 
-.blog-list {
-    list-style-type: none;
+.aside-title {
+  font-size: 30pt;
+  display: inline-block;
+  text-indent: 15px;
+  color: var(--color3);
+  font-weight: bold;
+  pointer-events: none;
+  text-shadow: 0 0 5px var(--color1), 0 0 2px var(--color1),
+    0 0 15px var(--color1);
 }
 
-.blog-list-item {
-    font-size: 16pt;
-    width: auto;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 15px;
-    border: 2px solid black;
-    margin: 10px;
-    cursor: pointer;
+.aside-title::first-letter {
+  font-size: 40pt;
+  color: var(--color3);
 }
 
+aside p {
+  color: var(--color1);
+}
+
+aside hr {
+  border: 1px solid var(--color1);
+  border-radius: 50%;
+  margin: 20px 0;
+}
 /* FOOTER */

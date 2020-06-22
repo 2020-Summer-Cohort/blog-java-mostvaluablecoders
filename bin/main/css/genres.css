@@ -1,0 +1,113 @@
+/* SETUP */
+
+:root {
+  --color1: #032430;
+  --color2: #0d1553;
+  --color3: #31a0fe;
+  --color4: #89e5f6;
+  --color5: #d6daff;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+footer {
+  background-image: linear-gradient(
+    to right,
+    var(--color1) 20%,
+    var(--color2),
+    var(--color1) 80%
+  );
+}
+
+/* ARTICLE */
+
+main img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.genre-container {
+  height: 250px;
+  width: 100%;
+  padding: 50px;
+}
+
+.genre-box {
+  width: 80%;
+  height: 180px;
+  margin: 0 auto;
+  background-color: var(--color4);
+  border-radius: 10px;
+  text-align: center;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 0 10px var(--color1) inset, 0 0 20px var(--color1) inset,
+    0 0 20px var(--color1) inset, 0 0 30px var(--color1) inset,
+    0 0 30px var(--color1) inset, 0 0 40px var(--color1) inset;
+}
+
+.genre-title {
+  margin: 0 auto;
+  font-size: 30pt;
+  color: var(--color4);
+  font-weight: bold;
+  transition: all 3s ease;
+  text-shadow: 0 0 5px var(--color1), 0 0 2px var(--color1),
+    0 0 15px var(--color1);
+}
+
+.genre {
+  margin-top: 10px;
+  color: var(--color2);
+  font-size: 20pt;
+  display: inline-block;
+  align-items: center;
+  width: 30%;
+  text-decoration: none;
+}
+
+.genre-box hr {
+  margin: 10px 0;
+  margin-left: 10%;
+  border-radius: 50%;
+  width: 80%;
+  box-shadow: 0 0 5px var(--color1), 0 0 2px var(--color1),
+    0 0 15px var(--color1);
+}
+
+.genre-box a::before,
+.genre-box a::after {
+  position: absolute;
+  top: 95px;
+  font-size: 12pt;
+  content: "";
+  opacity: 0;
+  transition: all 2s ease 0s;
+  z-index: 5;
+}
+
+.genre-box a:hover::before,
+.genre-box a:hover::after {
+  opacity: 1;
+}
+
+.genre-box a:first-of-type:hover::before {
+  content: "0 1 1 0 0 1 0 1";
+  left: 30%;
+}
+
+.genre-box a:last-of-type:hover::before {
+  content: "0 1 0 1 1 0 0 1";
+  left: 59%;
+}
+
+.genre-box a:first-of-type::before {
+  content: "1 0 0 1 1 0 1 0";
+  left: 30%;
+}
+
+.genre-box a:last-of-type::before {
+  content: "1 0 1 0 0 1 1 0";
+  left: 59%;
+}
