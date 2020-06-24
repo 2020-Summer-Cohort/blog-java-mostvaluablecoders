@@ -1,0 +1,249 @@
+/* SETUP */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--color5);
+}
+
+html {
+    background-color: var(--color1);
+}
+
+:root {
+  --color1: #032430;
+  --color2: #0d1553;
+  --color3: #31a0fe;
+  --color4: #89e5f6;
+  --color5: #d6daff;
+  --font1: ;
+  --font2: ;
+  font-size: 12pt;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/* PAGE LAYOUT */
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-image: linear-gradient(to right, var(--color2), var(--color1) 70%);
+  height: 140px;
+  display: flex;
+  justify-items: center;
+  flex-direction: row;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--color1);
+}
+
+article {
+  height: auto;
+}
+
+aside {
+  width: auto;
+  min-width: 150px;
+  background-color: var(--color3);
+  text-align: center;
+  margin: 0 25px;
+}
+
+footer {
+  background-image: linear-gradient(to right, var(--color2), var(--color1) 70%);
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 15pt;
+}
+
+/* HEADER */
+
+.logo {
+  position: relative;
+  padding: 25px;
+  display: flex;
+}
+
+.logo-pic {
+  height: 80px;
+  width: auto;
+  margin: 0 auto;
+  position: absolute;
+  order: 1;
+  margin: 5px 13px;
+}
+
+.logo-text {
+  font-size: 18pt;
+  order: 2;
+  margin-left: 20px;
+  margin-top: -15px;
+}
+
+.logo-text p::first-letter {
+  font-size: 23pt;
+  font-weight: bold;
+  color: var(--color4);
+}
+
+.logo-text p:nth-child(2) {
+  text-indent: 20px;
+}
+
+.logo-pic-div {
+  height: auto;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.logo-pic-div:hover {
+  box-shadow: 0 0 10px var(--color4), 0 0 20px var(--color4),
+    0 0 30px var(--color4);
+  background-color: var(--color4);
+}
+
+/* NAV MENU */
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 100px;
+  margin-top: 50px;
+  width: auto;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--color5);
+  font-size: 25pt;
+  margin: 15px 0;
+  display: inline-block;
+  text-align: center;
+  width: 200px;
+}
+
+.nav-menu a:hover::first-letter {
+  color: var(--color4);
+  text-shadow: 0 0 10px var(--color5);
+}
+
+.nav-menu a::before,
+.nav-menu a::after {
+  position: absolute;
+  top: 0;
+  font-size: 10pt;
+  opacity: 0;
+  transition: all 2s ease 0s;
+}
+
+.nav-menu a:hover::before,
+.nav-menu a:hover::after {
+  opacity: 1;
+}
+
+.nav-menu a:nth-child(1):hover::before {
+  content: "0 1 0 0";
+  left: 55px;
+}
+
+.nav-menu a:nth-child(1):hover::after {
+  content: "1 1 0 1";
+  left: 105px;
+}
+
+.nav-menu a:nth-child(2):hover::before {
+  content: "0 1 0 1";
+  left: 255px;
+}
+
+.nav-menu a:nth-child(2):hover::after {
+  content: "0 1 1 0";
+  left: 305px;
+}
+
+.nav-menu a:nth-child(3):hover::before {
+  content: "0 1 0 0";
+  left: 455px;
+}
+
+.nav-menu a:nth-child(3):hover::after {
+  content: "0 0 1 1";
+  left: 505px;
+}
+
+.nav-menu a:nth-child(1)::before {
+  content: "1 0 1 1";
+  left: 55px;
+}
+
+.nav-menu a:nth-child(1)::after {
+  content: "0 0 1 0";
+  left: 105px;
+}
+
+.nav-menu a:nth-child(2)::before {
+  content: "1 0 1 0";
+  left: 255px;
+}
+
+.nav-menu a:nth-child(2)::after {
+  content: "1 0 0 1";
+  left: 305px;
+}
+
+.nav-menu a:nth-child(3)::before {
+  content: "1 0 1 1";
+  left: 455px;
+}
+
+.nav-menu a:nth-child(3)::after {
+  content: "1 1 0 0";
+  left: 505px;
+}
+
+.nav-menu a:nth-child(1):hover ~ .bottom-bar {
+  width: 33%;
+  left: 0;
+  bottom: 0;
+  opacity: 1;
+}
+
+.nav-menu a:nth-child(2):hover ~ .bottom-bar {
+  width: 33%;
+  left: 33%;
+  bottom: 0;
+  opacity: 1;
+}
+
+.nav-menu a:nth-child(3):hover ~ .bottom-bar {
+  width: 33%;
+  left: 67%;
+  bottom: 0;
+  opacity: 1;
+}
+
+.nav-menu .bottom-bar {
+  position: absolute;
+  height: 2px;
+  bottom: -5px;
+  z-index: 0;
+  background-color: var(--color4);
+  width: 0;
+  border-radius: 50%;
+  opacity: 0;
+  left: 33%;
+  transition: all 0.5s ease 0s;
+}
