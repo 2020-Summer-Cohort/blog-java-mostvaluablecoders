@@ -29,25 +29,25 @@
         </div>
       </section>
       <nav class="nav-menu">
-        <a href="./genres.html">Genres</a>
-        <a href="./posts.html">All Posts </a>
-        <a href="./tags.html">All Tags</a>
+        <a href="./genres-template.html">Genres</a>
+        <a href="./all-posts-template.html">All Posts </a>
+        <a href="./all-tags-template.html">All Tags</a>
         <div class="bottom-bar"></div>
       </nav>
     </header>
 
     <main>
       <article>
-        <div class="post-title">Post Title</div>
+        <div class="post-title" th:text="${post.title}">Post Title</div>
         <div class="post-info">
-          <a href="#" class="author">Author</a>
-          <a href="#" class="date">Date</a>
-          <a href="#" class="genre">Genre</a>
+          <a href="#" class="author" th:text="${post.author}">Author</a>
+          <a href="#" class="date" th:text="${post.publishDate}">Date</a>
+          <a href="#" class="genre" th:text="${post.genre}">Genre</a>
         </div>
         <div class="tag-container">
           <span class="tag-text">Tags:</span>
-          <a href="#" class="tag">Tag1<span>|</span></a>
-          <a href="#" class="tag">Tag2<span>|</span></a>
+          <a th:each="tag: ${post.tags}" href="'/tags/' + ${tag}"
+          class="tag" th:text="${tag}">Tag1<span>|</span></a>
         </div>
         <section class="post-content">
           <p>

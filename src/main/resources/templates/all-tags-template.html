@@ -30,8 +30,8 @@
       </section>
       <nav class="nav-menu">
         <a href="./">Home</a>
-        <a href="./genres.html">Genres</a>
-        <a href="./all-posts.html">All Posts </a>
+        <a href="./genres-template.html">Genres</a>
+        <a href="./all-posts-template.html">All Posts </a>
         <div class="bottom-bar"></div>
       </nav>
     </header>
@@ -43,11 +43,11 @@
           <p class="title">All</p><p class="title">Tags</p>
           <hr />
           <ul class="tags-list">
-            <li class="tag-name"><a href="#">Tag1</a></li>
-            <li class="tag-name"><a href="#">Tag2</a></li>
-            <li class="tag-name"><a href="#">Tag3</a></li>
-            <li class="tag-name"><a href="#">Tag4</a></li>
-            <li class="tag-name"><a href="#">Tag5</a></li>
+            <li class="post-name" th:each="tag: ${tags}">
+              <a href="@{'/tags/'+${tag}}" th:text="${tag}}">
+                TagName
+              </a>
+            </li>
           </ul>
       </aside>
     </main>

@@ -30,8 +30,8 @@
       </section>
       <nav class="nav-menu">
         <a href="./">Home</a>
-        <a href="./genres.html">Genres</a>
-        <a href="./all-tags.html">All Tags</a>
+        <a href="./genres-template.html">Genres</a>
+        <a href="./all-tags-template.html">All Tags</a>
         <div class="bottom-bar"></div>
       </nav>
     </header>
@@ -43,11 +43,16 @@
           <p class="title">All</p><p class="title">Posts</p>
           <hr />
           <ul class="posts-list">
-            <li class="post-name"><a href="#">Post 1</a></li>
-            <li class="post-name"><a href="#">Post 2</a></li>
-            <li class="post-name"><a href="#">Post 3</a></li>
-            <li class="post-name"><a href="#">Post 4</a></li>
-            <li class="post-name"><a href="#">Post 5</a></li>
+            <li class="post-name" th:each="post: ${frontend.allPosts}">
+              <a href="@{'/frontend/'+${post.title}}" th:text="${post.title}}">
+                Post Name
+              </a>
+            </li>
+            <li class="post-name" th:each="post: ${backend.allPosts}">
+              <a href="@{'/backend/'+${post.title}}" th:text="${post.title}}">
+                Post Name
+              </a>
+            </li>
           </ul>
       </aside>
     </main>

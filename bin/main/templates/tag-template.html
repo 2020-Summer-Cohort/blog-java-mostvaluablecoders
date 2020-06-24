@@ -40,14 +40,14 @@
       <article>
       </article>
       <aside>
-          <p class="title">TagName</p>
+          <p th:text="${tag}" class="title">TagName</p>
           <hr />
           <ul class="post-list">
-            <li class="post-name"><a href="#">Post 1</a></li>
-            <li class="post-name"><a href="#">Post 2</a></li>
-            <li class="post-name"><a href="#">Post 3</a></li>
-            <li class="post-name"><a href="#">Post 4</a></li>
-            <li class="post-name"><a href="#">Post 5</a></li>
+            <li class="post-name" th:each="post: ${tag.allPosts}">
+              <a href="@{'/frontend/'+${post.title}}" th:text="${post.title}}">
+                Post Name
+              </a>
+            </li>
           </ul>
       </aside>
     </main>
