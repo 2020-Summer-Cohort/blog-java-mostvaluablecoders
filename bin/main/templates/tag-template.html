@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/setup&nav.css" />
-    <link rel="stylesheet" href="css/all-tags.css" />
+    <link rel="stylesheet" href="/css/setup&nav.css" />
+    <link rel="stylesheet" href="/css/tag.css" />
     <title>MostValuableCoders</title>
   </head>
   <body>
@@ -20,7 +20,7 @@
             <a href="./">
               <img
                 class="logo-pic"
-                src="images/mvc.png"
+                src="/images/mvc.png"
                 title="MostValuableCoders"
                 alt="MVC Logo"
               />
@@ -40,14 +40,14 @@
       <article>
       </article>
       <aside>
-          <p class="title">All</p><p class="title">Tags</p>
+          <p th:text="${tag}" class="title">TagName</p>
           <hr />
-          <ul class="tags-list">
-            <li class="tag-name"><a href="#">Tag1</a></li>
-            <li class="tag-name"><a href="#">Tag2</a></li>
-            <li class="tag-name"><a href="#">Tag3</a></li>
-            <li class="tag-name"><a href="#">Tag4</a></li>
-            <li class="tag-name"><a href="#">Tag5</a></li>
+          <ul class="post-list">
+            <li class="post-name" th:each="post: ${tag.allPosts}">
+              <a href="@{'/frontend/'+${post.title}}" th:text="${post.title}}">
+                Post Name
+              </a>
+            </li>
           </ul>
       </aside>
     </main>

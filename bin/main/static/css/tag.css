@@ -39,6 +39,10 @@
     margin: 10px;
     display: inline-block;
   }
+
+  .title::before {
+    content: "#";
+  }
   
   .title::first-letter {
     font-size: 35pt;
