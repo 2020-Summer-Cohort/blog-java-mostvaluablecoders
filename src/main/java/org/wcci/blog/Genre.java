@@ -1,22 +1,22 @@
 package org.wcci.blog;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 import java.util.Set;
 
-
+@Entity
 public class Genre {
     @Id
     @GeneratedValue
     private Long id;
     private String name;
-    private Set<Post> posts;
+    @OneToMany(mappedBy = "genre")
+    private Collection<Post> posts;
 
 
     protected Genre(){}
 
-    public Genre(String name, Set<Post> posts){
+    public Genre(String name){
 
         this.name = name;
         this.posts = posts;
@@ -30,6 +30,10 @@ public class Genre {
 
     public String getName() {
         return name;
+    }
+
+    public Collection<Post> getPosts() {
+        return posts;
     }
 
 

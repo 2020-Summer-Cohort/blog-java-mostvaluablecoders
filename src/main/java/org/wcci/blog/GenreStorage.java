@@ -9,4 +9,11 @@ public class GenreStorage {
     public GenreStorage(GenreRepository genreRepo){
         this.genreRepo = genreRepo;
     }
+
+    public Genre getPostByGenre(String name) {
+
+        return genreRepo.findByName(name);
+
+
+    }
 }

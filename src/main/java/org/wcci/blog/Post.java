@@ -1,32 +1,36 @@
 package org.wcci.blog;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+import java.util.Collection;
 import java.util.Set;
-
+@Entity
 public class Post {
     @Id
     @GeneratedValue
     private long id;
     private String title;
-    private Set<Author> authors;
+    @ManyToOne
+    private Author author;
     private String body;
     private LocalDateTime publishDate;
-    private String category;
+    @ManyToOne
+    private Genre genre;
 
 
-    private Set<HashTag> hashTags;
+    protected Post(){}
+    @ManyToMany
+    private Collection<HashTag> hashTags;
 
 
-    public Post(long id, String title, Set<Author> authors, String body, LocalDateTime publishDate, String category, Set<HashTag> hashTags) {
+    public Post(long id, String title, Author author, String body, LocalDateTime publishDate, Genre genre, Collection<HashTag> hashTags) {
         this.id = id;
         this.title = title;
-        this.authors = authors;
+        this.author = author;
         this.body = body;
         this.publishDate = publishDate;
-        this.category = category;
+        this.genre = genre;
         this.hashTags = hashTags;
     }
 
@@ -38,8 +42,8 @@ public class Post {
         return id;
     }
 
-    public Set<Author> getAuthors() {
-        return authors;
+    public Author getAuthor() {
+        return author;
     }
 
     public String getBody() {
@@ -50,11 +54,11 @@ public class Post {
         return publishDate;
     }
 
-    public String getCategory() {
-        return category;
+    public Genre getGenre() {
+        return genre;
     }
 
-    public Set<HashTag> getHashTags() {
+    public Collection<HashTag> getHashTags() {
         return hashTags;
     }
 }
