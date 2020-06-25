@@ -10,4 +10,11 @@ public class PostStorage {
         this.postRepository = postRepository;
     }
 
+    public Post findPostByTitle(String title) {
+        return postRepository.findPostByTitle(title);
+    }
+
+    public Author findAuthorByTitle(String title) {
+        return postRepository.findAuthorByTitle(title);
+    }
 }

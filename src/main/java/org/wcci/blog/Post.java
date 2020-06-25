@@ -1,6 +1,7 @@
 package org.wcci.blog;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import java.util.Collection;
@@ -14,7 +15,7 @@ public class Post {
     @ManyToOne
     private Author author;
     private String body;
-    private LocalDateTime publishDate;
+    private LocalDate publishDate;
     @ManyToOne
     private Genre genre;
 
@@ -24,14 +25,12 @@ public class Post {
     private Collection<HashTag> hashTags;
 
 
-    public Post(long id, String title, Author author, String body, LocalDateTime publishDate, Genre genre, Collection<HashTag> hashTags) {
-        this.id = id;
+    public Post(String title, Author author, String body, LocalDate publishDate, Genre genre, HashTag... hashTags) {
         this.title = title;
         this.author = author;
         this.body = body;
         this.publishDate = publishDate;
         this.genre = genre;
-        this.hashTags = hashTags;
     }
 
     public String getTitle() {
@@ -50,7 +49,7 @@ public class Post {
         return body;
     }
 
-    public LocalDateTime getPublishDate() {
+    public LocalDate getPublishDate() {
         return publishDate;
     }
 

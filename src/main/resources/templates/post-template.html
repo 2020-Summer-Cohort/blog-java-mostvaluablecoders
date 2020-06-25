@@ -38,127 +38,18 @@
 
     <main>
       <article>
-        <div class="post-title" th:text="${post.title}">Post Title</div>
+        <div class="post-title" th:text="${postToDisplay.title}">Post Title</div>
         <div class="post-info">
-          <a href="#" class="author" th:text="${post.author}">Author</a>
-          <a href="#" class="date" th:text="${post.publishDate}">Date</a>
-          <a href="#" class="genre" th:text="${post.genre}">Genre</a>
+          <span class="author" th:text="${author.name}">Author</span>
+          <span class="date" th:text="${postToDisplay.publishDate}">Date</span>
+          <a href="#" class="genre" th:text="${postToDisplay.genre}">Genre</a>
         </div>
         <div class="tag-container">
           <span class="tag-text">Tags:</span>
-          <a th:each="tag: ${post.tags}" href="'/tags/' + ${tag}"
+          <a th:each="tag: ${postToDisplay.hashTags}" href="'/tags/' + ${tag}"
           class="tag" th:text="${tag}">Tag1<span>|</span></a>
         </div>
-        <section class="post-content">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. In ante
-            metus dictum at tempor commodo ullamcorper a. Ultrices sagittis orci
-            a scelerisque. Malesuada fames ac turpis egestas maecenas pharetra
-            convallis posuere. Est pellentesque elit ullamcorper dignissim cras
-            tincidunt lobortis feugiat vivamus. Pulvinar mattis nunc sed blandit
-            libero volutpat sed cras ornare. Integer enim neque volutpat ac.
-            Cursus euismod quis viverra nibh. Pellentesque id nibh tortor id
-            aliquet lectus proin nibh. Rhoncus mattis rhoncus urna neque
-            viverra. Lacus vel facilisis volutpat est velit egestas dui. Morbi
-            tristique senectus et netus et malesuada fames. Nunc sed blandit
-            libero volutpat. Vitae purus faucibus ornare suspendisse.
-          </p>
-
-          <p>
-            Id aliquet risus feugiat in ante metus dictum. Ridiculus mus mauris
-            vitae ultricies leo integer malesuada nunc vel. In ante metus dictum
-            at tempor commodo ullamcorper a lacus. Pretium nibh ipsum consequat
-            nisl vel pretium lectus quam id. Integer quis auctor elit sed
-            vulputate mi. Volutpat blandit aliquam etiam erat velit scelerisque
-            in dictum non. At quis risus sed vulputate. Viverra mauris in
-            aliquam sem fringilla ut morbi tincidunt augue. Nibh tellus molestie
-            nunc non. Non consectetur a erat nam at. Sem et tortor consequat id
-            porta nibh venenatis cras. Risus viverra adipiscing at in tellus
-            integer feugiat scelerisque varius. Imperdiet proin fermentum leo
-            vel orci. Vitae ultricies leo integer malesuada nunc vel risus
-            commodo viverra.
-          </p>
-
-          <p>
-            Id faucibus nisl tincidunt eget nullam non. Auctor neque vitae
-            tempus quam pellentesque nec nam aliquam sem. Ultrices mi tempus
-            imperdiet nulla malesuada pellentesque elit eget. Vulputate sapien
-            nec sagittis aliquam malesuada bibendum arcu. Erat imperdiet sed
-            euismod nisi porta lorem mollis aliquam ut. Mauris a diam maecenas
-            sed. Donec adipiscing tristique risus nec feugiat. Tellus elementum
-            sagittis vitae et leo duis ut. Ullamcorper malesuada proin libero
-            nunc consequat interdum varius sit amet. Nec nam aliquam sem et.
-            Pulvinar etiam non quam lacus suspendisse.
-          </p>
-
-          <p>
-            Euismod nisi porta lorem mollis. Dignissim suspendisse in est ante
-            in nibh mauris cursus. Ipsum dolor sit amet consectetur. Orci eu
-            lobortis elementum nibh tellus molestie nunc non. Adipiscing enim eu
-            turpis egestas pretium aenean pharetra magna ac. Magna eget est
-            lorem ipsum. Nunc consequat interdum varius sit amet mattis
-            vulputate enim nulla. Neque egestas congue quisque egestas diam in
-            arcu cursus. Tellus id interdum velit laoreet id donec ultrices
-            tincidunt. Ac felis donec et odio pellentesque. Tortor aliquam nulla
-            facilisi cras fermentum odio eu. Semper feugiat nibh sed pulvinar
-            proin gravida hendrerit lectus a. Sed euismod nisi porta lorem
-            mollis aliquam ut. Auctor eu augue ut lectus arcu bibendum. Donec
-            enim diam vulputate ut pharetra sit amet. Mattis molestie a iaculis
-            at erat pellentesque adipiscing commodo elit.
-          </p>
-
-          <p>
-            At elementum eu facilisis sed odio. Lorem ipsum dolor sit amet
-            consectetur adipiscing. Faucibus scelerisque eleifend donec pretium.
-            Urna condimentum mattis pellentesque id nibh tortor. Penatibus et
-            magnis dis parturient montes nascetur ridiculus. Suspendisse sed
-            nisi lacus sed viverra tellus in. Dui sapien eget mi proin sed
-            libero enim. Amet nisl purus in mollis nunc. Arcu odio ut sem nulla
-            pharetra diam sit amet. Sem et tortor consequat id porta nibh.
-            Ornare suspendisse sed nisi lacus sed viverra. Enim ut sem viverra
-            aliquet eget sit. Volutpat blandit aliquam etiam erat velit
-            scelerisque in dictum non. Purus sit amet volutpat consequat.
-            Elementum integer enim neque volutpat ac tincidunt vitae. Faucibus a
-            pellentesque sit amet porttitor eget dolor.
-          </p>
-
-          <p>
-            Porta nibh venenatis cras sed. Rhoncus aenean vel elit scelerisque.
-            Gravida neque convallis a cras semper auctor neque. Cursus euismod
-            quis viverra nibh cras pulvinar mattis nunc. Viverra nam libero
-            justo laoreet. Eu scelerisque felis imperdiet proin. In massa tempor
-            nec feugiat nisl. Tristique senectus et netus et malesuada fames ac
-            turpis. Orci nulla pellentesque dignissim enim sit amet venenatis.
-            In tellus integer feugiat scelerisque varius. Volutpat ac tincidunt
-            vitae semper. Faucibus ornare suspendisse sed nisi lacus sed
-            viverra. Auctor neque vitae tempus quam pellentesque nec nam aliquam
-            sem. Hac habitasse platea dictumst vestibulum rhoncus est
-            pellentesque elit. Sit amet facilisis magna etiam tempor orci.
-            Fermentum posuere urna nec tincidunt. Nibh nisl condimentum id
-            venenatis a condimentum vitae sapien pellentesque. Ipsum consequat
-            nisl vel pretium lectus quam. Odio eu feugiat pretium nibh ipsum
-            consequat nisl vel pretium.
-          </p>
-
-          <p>
-            Etiam sit amet nisl purus in mollis nunc sed. Semper risus in
-            hendrerit gravida. Quam viverra orci sagittis eu volutpat odio
-            facilisis mauris. Mauris pharetra et ultrices neque ornare aenean
-            euismod elementum. Id consectetur purus ut faucibus pulvinar
-            elementum integer enim neque. Commodo sed egestas egestas fringilla
-            phasellus faucibus scelerisque. Adipiscing bibendum est ultricies
-            integer quis auctor elit sed. Venenatis urna cursus eget nunc
-            scelerisque viverra mauris in. Ultricies integer quis auctor elit
-            sed. Urna cursus eget nunc scelerisque viverra mauris in aliquam.
-            Enim ut sem viverra aliquet eget sit amet. Sapien pellentesque
-            habitant morbi tristique senectus et netus et malesuada. Elit sed
-            vulputate mi sit amet. Ultrices dui sapien eget mi proin sed libero
-            enim sed. Viverra suspendisse potenti nullam ac tortor vitae purus.
-            Tincidunt augue interdum velit euismod in pellentesque massa.
-            Porttitor eget dolor morbi non arcu risus quis. Vulputate odio ut
-            enim blandit volutpat maecenas. Purus sit amet volutpat consequat.
-          </p>
+        <section class="post-content" th:text="${postToDisplay.body}">
         </section>
       </article>
     </main>

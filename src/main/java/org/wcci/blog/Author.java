@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import java.util.Collection;
 import java.util.Set;
 @Entity
 public class Author {
@@ -14,13 +15,11 @@ public class Author {
     private Long id;
     private String name;
     @OneToMany (mappedBy = "author")
-    private Set<Post> posts;
+    private Collection<Post> posts;
 
 
-    public Author(Long id, String name, Set<Post> posts) {
-        this.id = id;
+    public Author(String name) {
         this.name = name;
-        this.posts = posts;
     }
 
 
@@ -34,7 +33,7 @@ public class Author {
         return id;
     }
 
-    public Set<Post> getPosts() {
+    public Collection<Post> getPosts() {
         return posts;
     }
 }
