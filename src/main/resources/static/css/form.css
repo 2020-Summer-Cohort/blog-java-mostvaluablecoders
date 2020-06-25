@@ -1,0 +1,109 @@
+/* SETUP */
+
+:root {
+  --color1: #032430;
+  --color2: #0d1553;
+  --color3: #31a0fe;
+  --color4: #89e5f6;
+  --color5: #d6daff;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/* MAIN */
+
+article {
+  background-color: var(--color5);
+  width: 80%;
+  height: 600px;
+  margin: 0 auto;
+  color: var(--color1);
+  padding: 50px;
+  text-align: center;
+}
+
+article * {
+  color: var(--color1);
+  font-size: 15pt;
+}
+
+.page-title {
+  margin: 0 auto;
+  font-size: 30pt;
+}
+
+.form-div {
+  width: 100%;
+  position: relative;
+}
+
+.input-div {
+  width: 300px;
+  height: 25px;
+  position: relative;
+  margin: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+}
+
+.form .input-div:last-child {
+  height: 300px;
+  width: 500px;
+}
+.form textarea {
+  width: 500px;
+  height: 300px;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.form label {
+  position: absolute;
+  bottom: 2px;
+  left: 10px;
+  pointer-events: none;
+  transition: all 1s ease;
+}
+
+.form .input-div:last-child label {
+  top: 2px;
+}
+
+.form .input-div:nth-child(4) label {
+  left: -65px;
+}
+
+.form .input-div:nth-child(3) label {
+  left: -60px;
+}
+
+.form .input-div:nth-child(1) input:focus ~ label,
+.form .input-div:nth-child(1) input:valid ~ label {
+    left: -95px;
+}
+
+.form .input-div:nth-child(2) input:focus ~ label,
+.form .input-div:nth-child(2) input:valid ~ label {
+    left: -75px;
+}
+
+.form .input-div:nth-child(5) textarea:focus ~ label,
+.form .input-div:nth-child(5) textarea:valid ~ label {
+    left: -100px;
+}

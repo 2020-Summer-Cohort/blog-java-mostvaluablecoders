@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,13 +42,13 @@
       <aside>
           <p class="title">All</p><p class="title">Tags</p>
           <hr />
-          <ul class="tags-list">
-            <li class="post-name" th:each="tag: ${tags}">
-              <a href="@{'/tags/'+${tag}}" th:text="${tag}}">
-                TagName
-              </a>
-            </li>
-          </ul>
+<!--          <ul class="tags-list">-->
+<!--            <li class="post-name" th:each="tag: ${tags}">-->
+<!--              <a th:href="@{'/tags/'+${tag}}" th:text="${tag}}">-->
+<!--                TagName-->
+<!--              </a>-->
+<!--            </li>-->
+<!--          </ul>-->
       </aside>
     </main>
 

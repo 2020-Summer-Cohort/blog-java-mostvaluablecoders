@@ -52,7 +52,6 @@ main img {
   font-size: 30pt;
   color: var(--color4);
   font-weight: bold;
-  transition: all 3s ease;
   text-shadow: 0 0 5px var(--color1), 0 0 2px var(--color1),
     0 0 15px var(--color1);
 }

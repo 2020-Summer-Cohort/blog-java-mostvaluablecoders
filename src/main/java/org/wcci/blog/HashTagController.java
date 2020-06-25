@@ -25,8 +25,7 @@ public class HashTagController {
     }
 
     @RequestMapping("tags/")
-    public String showSinglePost(Model model) {
-        model.addAttribute("allTags", hashTagStorage.findAllHashTags());
+    public String routeToAllTagsTemplate() {
         return "all-tags-template";
     }
 }

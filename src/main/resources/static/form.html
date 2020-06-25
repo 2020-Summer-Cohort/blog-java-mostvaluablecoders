@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/setup&nav.css" />
+    <link rel="stylesheet" href="css/form.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <section>
+        <div class="logo">
+          <span class="logo-text">
+            <p class="logo-text-word">Most</p>
+            <p class="logo-text-word">Valuable</p>
+            <p class="logo-text-word">Coders</p>
+          </span>
+          <div class="logo-pic-div">
+            <a href="./">
+              <img
+                class="logo-pic"
+                src="images/mvc.png"
+                title="MostValuableCoders"
+                alt="MVC Logo"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+      <nav class="nav-menu">
+        <a href="./genres-template.html">Genres</a>
+        <a href="./all-posts-template.html">All Posts </a>
+        <a href="./all-tags-template.html">All Tags</a>
+        <div class="bottom-bar"></div>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <div class="page-title">Add New Post</div>
+        <div class="form-div">
+          <form action="" class="form">
+            <div class="input-div">
+              <input type="text" name="title" id="title" autocomplete="off" required />
+              <label for="title">
+                <span class="label-name">Post Title</span>
+              </label>
+            </div>
+
+            <div class="input-div">
+              <input type="text" name="author" id="author" autocomplete="off" required />
+              <label for="author">
+                <span class="label-name">Author</span>
+              </label>
+            </div>
+
+            <div class="input-div">
+              <input
+                type="date"
+                name="date"
+                value="2020-06-24"
+                id="date"
+                autocomplete="off"
+                required
+              />
+              <label for="date">
+                <span class="label-name">Date</span>
+              </label>
+            </div>
+
+            <div class="input-div">
+              <select name="genre" id="genre" required>
+                <option value="frontEnd">Front End</option>
+                <option value="backEnd">Back End</option>
+              </select>
+              <label for="genre">
+                <span class="label-name">Genre</span>
+              </label>
+            </div>
+
+            <div class="input-div">
+              <textarea id="body" name="body" autocomplete="off" rows="15" cols="200" required></textarea>
+              <label for="body">
+                <span class="label-name">Post Body</span>
+              </label>
+            </div>
+          </form>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <div class="footer-text">&copy; 2020 MVC</div>
+    </footer>
+  </body>
+</html>
