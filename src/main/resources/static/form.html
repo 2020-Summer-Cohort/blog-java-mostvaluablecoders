@@ -42,14 +42,29 @@
         <div class="form-div">
           <form action="" class="form">
             <div class="input-div">
-              <input type="text" name="title" id="title" autocomplete="off" required />
+              <input
+                type="text"
+                name="title"
+                id="title"
+                placeholder=" "
+                autocomplete="off"
+                required
+              />
               <label for="title">
                 <span class="label-name">Post Title</span>
               </label>
             </div>
 
             <div class="input-div">
-              <input type="text" name="author" id="author" autocomplete="off" required />
+              <input
+                type="text"
+                name="author"
+                id="author"
+                placeholder=" "
+                autocomplete="off"
+                pattern="[A-Za-z]{2,15}"
+                required
+              />
               <label for="author">
                 <span class="label-name">Author</span>
               </label>
@@ -60,6 +75,7 @@
                 type="date"
                 name="date"
                 value="2020-06-24"
+                placeholder=" "
                 id="date"
                 autocomplete="off"
                 required
@@ -71,8 +87,8 @@
 
             <div class="input-div">
               <select name="genre" id="genre" required>
-                <option value="frontEnd">Front End</option>
-                <option value="backEnd">Back End</option>
+                <option value="Front-End">Front End</option>
+                <option value="Back-End">Back End</option>
               </select>
               <label for="genre">
                 <span class="label-name">Genre</span>
@@ -80,10 +96,19 @@
             </div>
 
             <div class="input-div">
-              <textarea id="body" name="body" autocomplete="off" rows="15" cols="200" required></textarea>
+              <textarea
+                id="body"
+                name="body"
+                autocomplete="off"
+                placeholder=" "
+                rows="15"
+                cols="200"
+                required
+              ></textarea>
               <label for="body">
                 <span class="label-name">Post Body</span>
               </label>
+              <button id="submit">Submit</button>
             </div>
           </form>
         </div>

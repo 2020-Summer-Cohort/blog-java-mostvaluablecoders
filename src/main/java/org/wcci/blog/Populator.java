@@ -20,8 +20,8 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Genre frontEnd = new Genre("Front End");
-        Genre backEnd = new Genre("Back End");
+        Genre frontEnd = new Genre("Front-End");
+        Genre backEnd = new Genre("Back-End");
         genreRepo.save(frontEnd);
         genreRepo.save(backEnd);
 

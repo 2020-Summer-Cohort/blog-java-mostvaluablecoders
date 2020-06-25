@@ -15,7 +15,7 @@
 article {
   background-color: var(--color5);
   width: 80%;
-  height: 600px;
+  height: auto;
   margin: 0 auto;
   color: var(--color1);
   padding: 50px;
@@ -57,7 +57,7 @@ article * {
   width: 100%;
   height: 100%;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid var(--color3);
   background-color: transparent;
 }
 
@@ -68,9 +68,13 @@ article * {
 .form textarea {
   width: 500px;
   height: 300px;
-  border: 1px solid black;
+  border: 2px solid var(--color3);
   border-radius: 15px;
   padding: 10px;
+}
+
+.form * {
+  outline: none;
 }
 
 .form label {
@@ -79,6 +83,24 @@ article * {
   left: 10px;
   pointer-events: none;
   transition: all 1s ease;
+}
+
+.form input:not(:placeholder-shown),
+.form select:not(:valid) {
+  border-bottom: 2px solid red;
+}
+
+.form textarea:not(:placeholder-shown) {
+  border: 2px solid red;
+}
+
+.form input:valid,
+.form select:valid {
+  border-bottom: 2px solid green;
+}
+
+.form textarea:valid {
+  border: 2px solid green;
 }
 
 .form .input-div:last-child label {
@@ -94,16 +116,24 @@ article * {
 }
 
 .form .input-div:nth-child(1) input:focus ~ label,
-.form .input-div:nth-child(1) input:valid ~ label {
-    left: -95px;
+.form .input-div:nth-child(1) input:valid ~ label,
+.form .input-div:nth-child(1) input:not(:placeholder-shown) ~ label {
+  left: -95px;
 }
 
 .form .input-div:nth-child(2) input:focus ~ label,
-.form .input-div:nth-child(2) input:valid ~ label {
-    left: -75px;
+.form .input-div:nth-child(2) input:valid ~ label,
+.form .input-div:nth-child(2) input:not(:placeholder-shown) ~ label {
+  left: -75px;
 }
 
 .form .input-div:nth-child(5) textarea:focus ~ label,
-.form .input-div:nth-child(5) textarea:valid ~ label {
-    left: -100px;
+.form .input-div:nth-child(5) textarea:valid ~ label,
+.form .input-div:nth-child(5) textarea:not(:placeholder-shown) ~ label {
+  left: -100px;
+}
+
+button {
+  padding: 5px 25px;
+  border-radius: 15px;
 }
