@@ -14,7 +14,7 @@ public class PostStorage {
         return postRepository.findPostByTitle(title);
     }
 
-    public Author findAuthorByTitle(String title) {
-        return postRepository.findAuthorByTitle(title);
+    public Iterable<Post> findAllPosts() {
+        return postRepository.findAll();
     }
 }

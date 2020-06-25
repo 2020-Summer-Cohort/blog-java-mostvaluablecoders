@@ -16,4 +16,8 @@ public class GenreStorage {
 
 
     }
+
+    public Iterable<Genre> findAllGenres() {
+        return genreRepo.findAll();
+    }
 }

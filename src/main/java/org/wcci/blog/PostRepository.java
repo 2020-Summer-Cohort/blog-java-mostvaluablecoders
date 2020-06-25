@@ -5,6 +5,4 @@ import org.springframework.data.repository.CrudRepository;
 public interface PostRepository extends CrudRepository<Post,Long> {
 
     Post findPostByTitle (String title);
-
-    Author findAuthorByTitle(String title);
 }

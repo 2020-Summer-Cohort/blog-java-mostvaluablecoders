@@ -18,8 +18,13 @@ public class PostController {
     @RequestMapping("posts/{title}")
     public String showSinglePost(@PathVariable String title, Model model) {
         model.addAttribute("postToDisplay", postStorage.findPostByTitle(title));
-        model.addAttribute("author",postStorage.findAuthorByTitle(title));
         return "post-template";
+    }
+
+    @RequestMapping("posts/")
+    public String showSinglePost(Model model) {
+        model.addAttribute("allPosts", postStorage.findAllPosts());
+        return "all-posts-template";
     }
 
 }

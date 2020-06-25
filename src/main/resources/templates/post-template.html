@@ -30,7 +30,7 @@
       </section>
       <nav class="nav-menu">
         <a href="./genres-template.html">Genres</a>
-        <a href="./all-posts-template.html">All Posts </a>
+        <a href="../posts">All Posts </a>
         <a href="./all-tags-template.html">All Tags</a>
         <div class="bottom-bar"></div>
       </nav>
@@ -40,9 +40,9 @@
       <article>
         <div class="post-title" th:text="${postToDisplay.title}">Post Title</div>
         <div class="post-info">
-          <span class="author" th:text="${author.name}">Author</span>
+          <span class="author" th:text="${postToDisplay.author.name}">Author</span>
           <span class="date" th:text="${postToDisplay.publishDate}">Date</span>
-          <a href="#" class="genre" th:text="${postToDisplay.genre}">Genre</a>
+          <a href="#" class="genre" th:text="${postToDisplay.genre.name}">Genre</a>
         </div>
         <div class="tag-container">
           <span class="tag-text">Tags:</span>

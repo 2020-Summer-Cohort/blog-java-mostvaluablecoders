@@ -42,18 +42,18 @@
       <aside>
           <p class="title">All</p><p class="title">Posts</p>
           <hr />
-          <ul class="posts-list">
-            <li class="post-name" th:each="post: ${frontend.allPosts}">
-              <a href="@{'/frontend/'+${post.title}}" th:text="${post.title}}">
-                Post Name
-              </a>
-            </li>
-            <li class="post-name" th:each="post: ${backend.allPosts}">
-              <a href="@{'/backend/'+${post.title}}" th:text="${post.title}}">
-                Post Name
-              </a>
-            </li>
-          </ul>
+<!--          <ul class="posts-list">-->
+<!--            <li class="post-name" th:each="post: ${frontend.allPosts}">-->
+<!--              <a th:href="@{'/frontend/'+${post.title}}" th:text="${post.title}}">-->
+<!--                Post Name-->
+<!--              </a>-->
+<!--            </li>-->
+<!--            <li class="post-name" th:each="post: ${backend.allPosts}">-->
+<!--              <a th:href="@{'/backend/'+${post.title}}" th:text="${post.title}}">-->
+<!--                Post Name-->
+<!--              </a>-->
+<!--            </li>-->
+<!--          </ul>-->
       </aside>
     </main>
 

@@ -18,6 +18,12 @@ public class GenreController{
         return "genre-template";
     }
 
+    @RequestMapping("genres/")
+    public String showSinglePost(Model model) {
+        model.addAttribute("allGenres", genreStorage.findAllGenres());
+        return "genres-template";
+    }
+
 }
 
 
