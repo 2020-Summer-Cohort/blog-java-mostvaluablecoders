@@ -1,5 +1,7 @@
 package org.wcci.blog;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -15,6 +17,7 @@ public class Post {
     @ManyToOne
     private Author author;
     private String body;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate publishDate;
     @ManyToOne
     private Genre genre;

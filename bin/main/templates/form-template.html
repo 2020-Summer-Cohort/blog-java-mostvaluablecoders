@@ -20,7 +20,7 @@
             <a href="../">
               <img
                 class="logo-pic"
-                src="./images/mvc.png"
+                src="/images/mvc.png"
                 title="MostValuableCoders"
                 alt="MVC Logo"
               />
@@ -29,6 +29,7 @@
         </div>
       </section>
       <nav class="nav-menu">
+        <a href="../../">Home</a>
         <a href="../../genres/">Genres</a>
         <a href="../../posts/">All Posts </a>
         <a href="../../tags/">All Tags</a>
@@ -56,6 +57,8 @@
             </div>
 
             <div class="input-div">
+                <!-- USE THYMELEAF TO GENERATE OPTIONS -->
+                <!-- MUST BE DYNAMIC LIST OF PRE-EXISTING AUTHORS -->
               <input
                 type="text"
                 name="author"
@@ -87,6 +90,7 @@
 
             <div class="input-div">
               <select name="genre" id="genre" required>
+                <!-- USE THYMELEAF TO GENERATE OPTIONS -->
                 <option value="Front-End">Front End</option>
                 <option value="Back-End">Back End</option>
               </select>

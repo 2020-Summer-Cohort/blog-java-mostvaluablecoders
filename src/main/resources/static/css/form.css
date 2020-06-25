@@ -136,4 +136,6 @@ article * {
 button {
   padding: 5px 25px;
   border-radius: 15px;
+  background-color: var(--color4);
+  cursor: pointer;
 }

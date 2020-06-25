@@ -9,4 +9,8 @@ public class AuthorStorage {
     public AuthorStorage(AuthorRepository authorRepo){
         this.authorRepo = authorRepo;
     }
+
+    public Iterable<Author> findAllAuthors() {
+        return authorRepo.findAll();
+    }
 }
