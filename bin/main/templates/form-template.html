@@ -57,17 +57,11 @@
             </div>
 
             <div class="input-div">
+              <select name="author" id="author" required>
                 <!-- USE THYMELEAF TO GENERATE OPTIONS -->
-                <!-- MUST BE DYNAMIC LIST OF PRE-EXISTING AUTHORS -->
-              <input
-                type="text"
-                name="author"
-                id="author"
-                placeholder=" "
-                autocomplete="off"
-                pattern="[A-Za-z]{2,15}"
-                required
-              />
+                <option th:each="author: ${allAuthors}" 
+                th:value="${author.name}" th:text="${author.name}">Author</option>
+              </select>
               <label for="author">
                 <span class="label-name">Author</span>
               </label>
@@ -77,7 +71,7 @@
               <input
                 type="date"
                 name="date"
-                value="2020-06-24"
+                value="2020-06-29"
                 placeholder=" "
                 id="date"
                 autocomplete="off"
@@ -91,8 +85,8 @@
             <div class="input-div">
               <select name="genre" id="genre" required>
                 <!-- USE THYMELEAF TO GENERATE OPTIONS -->
-                <option value="Front-End">Front End</option>
-                <option value="Back-End">Back End</option>
+                <option th:each="genre: ${allGenres}" 
+                th:value="${genre.name}" th:text="${genre.name}">Genre</option>
               </select>
               <label for="genre">
                 <span class="label-name">Genre</span>

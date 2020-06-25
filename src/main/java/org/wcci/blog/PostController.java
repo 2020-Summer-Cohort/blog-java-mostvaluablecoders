@@ -3,7 +3,10 @@ package org.wcci.blog;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.time.LocalDate;
 
 @Controller
 public class PostController {
@@ -12,8 +15,10 @@ public class PostController {
     GenreStorage genreStorage;
     AuthorStorage authorStorage;
 
-    public PostController(PostStorage postStorage) {
+    public PostController(PostStorage postStorage, GenreStorage genreStorage, AuthorStorage authorStorage) {
         this.postStorage = postStorage;
+        this.genreStorage = genreStorage;
+        this.authorStorage = authorStorage;
     }
 
     @RequestMapping("posts/{title}")
@@ -24,8 +29,8 @@ public class PostController {
 
     @RequestMapping("posts/new-post")
     public String routeToForm(Model model) {
-        model.addAttribute("authors", authorStorage.findAllAuthors());
-        model.addAttribute("genres", genreStorage.findAllGenres());
+        model.addAttribute("allAuthors", authorStorage.findAllAuthors());
+        model.addAttribute("allGenres", genreStorage.findAllGenres());
         return "form-template";
     }
 
@@ -35,15 +40,14 @@ public class PostController {
         return "all-posts-template";
     }
 
-
-
-//    @PostMapping("reviews/add")
-//    public String addReview(String cheeseName, String texture, String milkSource, String geographicLocation,
-//                            Integer userRating, String userReviewComment,  long cheeseCategoryId) {
-//        CheeseCategory reviewCheeseCategory = cheeseCategoryStorage.findCheeseCategoryById(cheeseCategoryId);
-//
-//        reviewStorage.save(new Review(cheeseName, texture, milkSource, geographicLocation, userRating, userReviewComment,
-//                reviewCheeseCategory));
+    @PostMapping("posts/add")
+    public String addPost(String title, String author, String body, LocalDate publishDate, String genre) {
+        Author postAuthor = authorStorage.findAuthorByName(author);
+        Genre postGenre = genreStorage.findGenreByName(genre);
+        postStorage.save(new Post(title, postAuthor, body, publishDate, postGenre));
+        return "redirect:/";
+    }
+//        reviewCheeseCategory));
 //        return "redirect:/categories/"+ reviewCheeseCategory.getCheeseType();
 //    }
 

@@ -11,13 +11,14 @@ public class GenreStorage {
     }
 
     public Genre getPostByGenre(String name) {
-
         return genreRepo.findByName(name);
-
-
     }
 
     public Iterable<Genre> findAllGenres() {
         return genreRepo.findAll();
+    }
+
+    public Genre findGenreByName(String genre) {
+        return genreRepo.findByName(genre);
     }
 }

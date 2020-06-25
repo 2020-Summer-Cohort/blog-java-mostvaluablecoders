@@ -107,6 +107,10 @@ article * {
   top: 2px;
 }
 
+.form .input-div:nth-child(2) label {
+  left: -75px;
+}
+
 .form .input-div:nth-child(4) label {
   left: -65px;
 }
@@ -119,12 +123,6 @@ article * {
 .form .input-div:nth-child(1) input:valid ~ label,
 .form .input-div:nth-child(1) input:not(:placeholder-shown) ~ label {
   left: -95px;
-}
-
-.form .input-div:nth-child(2) input:focus ~ label,
-.form .input-div:nth-child(2) input:valid ~ label,
-.form .input-div:nth-child(2) input:not(:placeholder-shown) ~ label {
-  left: -75px;
 }
 
 .form .input-div:nth-child(5) textarea:focus ~ label,
