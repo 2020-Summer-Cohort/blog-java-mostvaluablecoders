@@ -14,7 +14,7 @@ public class HashTag {
     @GeneratedValue
     private Long id;
     private String name;
-    @ManyToMany
+    @ManyToMany(mappedBy = "hashTags")
     private Collection<Post> posts;
 
     protected HashTag(){}

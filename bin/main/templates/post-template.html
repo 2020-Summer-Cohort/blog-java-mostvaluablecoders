@@ -49,7 +49,7 @@
           <div class="tag-text">Tags:</div>
           <div class="tag-list">
             <div class="tag-div" th:each="tag: ${postToDisplay.hashTags}">
-          <a href="@{'/tags/' + ${tag.name}}"
+          <a th:href="@{'../tags/' + ${tag.name}}"
           class="tag" th:text="${tag.name}">Tag1</a>
           </div>
         </div>

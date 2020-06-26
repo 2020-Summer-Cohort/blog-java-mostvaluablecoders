@@ -112,6 +112,11 @@ main img {
   text-decoration: none;
 }
 
+.genre:hover, .author:hover {
+  border-bottom: 2px solid var(--color1);
+  text-shadow: 0 0 2px var(--color1);
+}
+
 .genre-container hr {
   margin: 10px 0;
   margin-left: 10%;

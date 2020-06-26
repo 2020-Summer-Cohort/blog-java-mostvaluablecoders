@@ -41,7 +41,7 @@
       <article>
       </article>
       <aside>
-          <p th:text="${tagToDisplay.name}" class="title">TagName</p>
+          <p class="title" th:text="${tagToDisplay.name}">TagName</p>
           <hr />
           <ul class="post-list">
             <li class="post-name" th:each="post: ${tagToDisplay.posts}">
