@@ -45,31 +45,21 @@ article * {
 }
 
 .tag-container {
+  position: relative;;
   margin-top: 15px;
   font-size: 15pt;
   width: auto;
   padding: 5px;
   text-align: center;
-  background-image: linear-gradient(
-    to right,
-    var(--color5) 10%,
-    var(--color4) 40%,
-    var(--color4) 60%,
-    var(--color5) 90%
-  );
-  border-top: 1px solid var(--color4);
-  border-bottom: 1px solid var(--color4);
-  border-radius: 30%;
+  background-color: var(--color4);
 }
 
-.tag-container:hover {
-    background-image: linear-gradient(
-      to right,
-      var(--color5) 5%,
-      var(--color4) 30%,
-      var(--color4) 70%,
-      var(--color5) 95%
-    );
+
+.tag-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .tag {
@@ -77,8 +67,12 @@ article * {
   display: inline-block;
 }
 
+.tag::before {
+  content: "#";
+}
+
 .tag-text {
-  margin: 0 15px;
+  margin-bottom: 10px;
 }
 
 .tag span {
@@ -89,20 +83,17 @@ article a:hover {
   font-weight: bold;
 }
 
-.tag span {
-  font-style: normal;
+.tag-div {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid var(--color3);
+  display: inline-flex
 }
 
-.tag:last-child span {
-    display: none;
-}
-
-.tag:hover span {
-  font-weight: normal;
-}
-
-.tag:last-child::after {
-  content: "";
+.tag-div:last-child {
+  border: none;
 }
 
 .post-content {
@@ -117,6 +108,35 @@ article a:hover {
 }
 
 .post-content p {
-    text-indent: 25px;
-    margin: 20px 0;
+  text-indent: 25px;
+  margin: 20px 0;
+}
+
+.add-tag {
+  position: absolute;
+  right: 15px;
+  top: 5px;
+}
+
+.add-tag input {
+  border: none;
+  background-color: transparent;
+  border-bottom: 3px solid var(--color3);
+  height: 25px;
+  width: 150px;
+  margin-left: 30px;
+  outline: none;
+  font-size: 12pt;
+  text-indent: 15px;
+}
+
+.add-tag button {
+  margin-top: 1px;
+  padding: 2px 15px;
+  background-color: var(--color3);
+  margin-left: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12pt;
 }

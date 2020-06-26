@@ -6,8 +6,11 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Set;
+
 @Entity
 public class Post {
     @Id
@@ -21,12 +24,11 @@ public class Post {
     private LocalDate publishDate;
     @ManyToOne
     private Genre genre;
-
-
-    protected Post(){}
     @ManyToMany
     private Collection<HashTag> hashTags;
 
+    protected Post() {
+    }
 
     public Post(String title, Author author, String body, LocalDate publishDate, Genre genre, HashTag... hashTags) {
         this.title = title;
@@ -34,6 +36,7 @@ public class Post {
         this.body = body;
         this.publishDate = publishDate;
         this.genre = genre;
+        this.hashTags = new ArrayList<>(Arrays.asList(hashTags));
     }
 
     public String getTitle() {
@@ -62,5 +65,9 @@ public class Post {
 
     public Collection<HashTag> getHashTags() {
         return hashTags;
+    }
+
+    public void addHashTag(HashTag hashtag) {
+        hashTags.add(hashtag);
     }
 }

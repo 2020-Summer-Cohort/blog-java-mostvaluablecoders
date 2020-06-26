@@ -41,14 +41,25 @@
       <article>
         <div class="post-title" th:text="${postToDisplay.title}">Post Title</div>
         <div class="post-info">
-          <span class="author" th:text="${postToDisplay.author.name}">Author</span>
+          <a th:href="@{'../authors/'+${postToDisplay.author.name}}" class="author" th:text="${postToDisplay.author.name}">Author</a>
           <span class="date" th:text="${postToDisplay.publishDate}">Date</span>
-          <a href="#" class="genre" th:text="${postToDisplay.genre.name}">Genre</a>
+          <a th:href="@{'../genres/'+${postToDisplay.genre.name}}" class="genre" th:text="${postToDisplay.genre.name}">Genre</a>
         </div>
         <div class="tag-container">
-          <span class="tag-text">Tags:</span>
-          <a th:each="tag: ${postToDisplay.hashTags}" href="'/tags/' + ${tag}"
-          class="tag" th:text="${tag}">Tag1<span>|</span></a>
+          <div class="tag-text">Tags:</div>
+          <div class="tag-list">
+            <div class="tag-div" th:each="tag: ${postToDisplay.hashTags}">
+          <a href="@{'/tags/' + ${tag.name}}"
+          class="tag" th:text="${tag.name}">Tag1</a>
+          </div>
+        </div>
+          <div class="add-tag">
+            <form action="/tags/add" method="POST">
+              <input name="tag" type="text" autocomplete="off" placeholder="Tag" required />
+              <input name="post" type="hidden" th:value="${postToDisplay.title}" required />
+              <button>ADD</button>
+            </form>
+          </div>
         </div>
         <section class="post-content" th:text="${postToDisplay.body}">
         </section>

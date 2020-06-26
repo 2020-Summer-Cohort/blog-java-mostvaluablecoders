@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/setup&nav.css" />
-    <link rel="stylesheet" href="/css/all-tags.css" />
-    <title>MostValuableCoders</title>
+    <link rel="stylesheet" href="/css/form.css" />
+    <title>Document</title>
   </head>
   <body>
     <header>
@@ -29,28 +29,18 @@
         </div>
       </section>
       <nav class="nav-menu">
-        <a href="../">Home</a>
-        <a href="../genres/">Genres</a>
-        <a href="../posts/">All Posts </a>
-        <a href="../posts/new-post/">New Post</a>
+        <a href="../../">Home</a>
+        <a href="../../genres/">Genres</a>
+        <a href="../../posts/">All Posts </a>
+        <a href="../../tags/">All Tags</a>
         <div class="bottom-bar"></div>
       </nav>
     </header>
 
     <main>
       <article>
+        <div class="page-title">Thank you for your submission! You post has been added!</div>
       </article>
-      <aside>
-          <p class="title">All</p><p class="title">Tags</p>
-          <hr />
-         <ul class="tags-list">
-           <li class="post-name" th:each="tag: ${tags}">
-             <a th:href="@{'/tags/'+${tag.name}}" th:text="${tag.name}">
-               TagName
-             </a>
-           </li>
-         </ul>
-      </aside>
     </main>
 
     <footer>

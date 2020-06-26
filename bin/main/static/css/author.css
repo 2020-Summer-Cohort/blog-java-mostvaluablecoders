@@ -1,0 +1,78 @@
+/* SETUP */
+
+:root {
+    --color1: #032430;
+    --color2: #0d1553;
+    --color3: #31a0fe;
+    --color4: #89e5f6;
+    --color5: #d6daff;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+  
+  /* MAIN */
+  
+  article {
+    order: 2;
+  }
+  
+  aside {
+    margin-left: 50px;
+    order: 1;
+    width: 400px;
+    background-color: #89e5f6ee;
+    padding: 40px;
+    min-height: 75vh;
+  }
+  
+  main {
+    background-image: url(../images/spiral.jpg);
+    background-size: cover;
+  }
+  
+  .title {
+    font-size: 30pt;
+    font-weight: bold;
+    color: var(--color4);
+    text-shadow: 0 0 5px var(--color1), 0 0 2px var(--color1),
+      0 0 15px var(--color1);
+    margin: 10px;
+    display: inline-block;
+  }
+  
+  .title::first-letter {
+    font-size: 35pt;
+  }
+
+  .title::after {
+      content: "'s Posts";
+  }
+  
+  aside hr {
+    margin: 10px 0;
+    border: 1px solid var(--color3);
+    border-radius: 50%;
+  }
+  
+  .post-list * {
+    color: var(--color1);
+    text-decoration: none;
+    list-style: none;
+    font-size: 20pt;
+    margin: 10px;
+  }
+  
+  .post-list li:hover {
+      font-weight: bold;
+  }
+  
+  .post-list li:hover::before {
+      content: "➢";
+  }
+  
+  .post-list li:hover::after {
+      content: "➢";
+      transform: scaleX(-1);
+      display: inline-flex;
+  }
+  

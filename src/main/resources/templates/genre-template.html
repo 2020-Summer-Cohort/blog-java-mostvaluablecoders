@@ -41,15 +41,15 @@
       <article>
       </article>
       <aside>
-<!--        <p class="title" th:text="${genre.name}">Genre</p><p class="title">Name</p>-->
-<!--          <hr />-->
-<!--          <ul class="post-list">-->
-<!--            <li class="post-name" th:each="post: ${genre.posts}">-->
-<!--              <a th:href="@{'/posts/'+${post.title}}" th:text="${genre.posts}}">-->
-<!--                Post Name-->
-<!--              </a>-->
-<!--            </li>-->
-<!--          </ul>-->
+       <p class="title" th:text="${genre.name}">Genre</p>
+         <hr />
+         <ul class="post-list">
+           <li class="post-name" th:each="post: ${genre.posts}">
+             <a th:href="@{'/posts/'+${post.title}}" th:text="${post.title}">
+               Post Name
+             </a>
+           </li>
+         </ul>
       </aside>
     </main>
 

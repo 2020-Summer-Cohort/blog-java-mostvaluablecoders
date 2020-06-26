@@ -28,12 +28,13 @@ main img {
 }
 
 .genre-container {
-  height: 250px;
+  height: auto;
   width: 100%;
   padding: 50px;
+  position: relative;
 }
 
-.genre-box {
+.genre-box, .author-box {
   width: 80%;
   height: 180px;
   margin: 0 auto;
@@ -47,8 +48,55 @@ main img {
     0 0 30px var(--color1) inset, 0 0 40px var(--color1) inset;
 }
 
-.genre-title {
-  margin: 0 auto;
+.add-box {
+  position: absolute;
+  top: 40px;
+  right: -20px;
+  width: 40%;
+}
+
+.add-box * {
+  color: var(--color1);
+}
+
+.add-box input {
+  border: none;
+  background-color: transparent;
+  border-bottom: 3px solid var(--color3);
+  height: 30px;
+  width: 150px;
+  margin-left: 30px;
+  outline: none;
+  font-size: 15pt;
+  text-indent: 15px;
+}
+
+.add-box input:focus {
+  background-color: var(--color5);
+}
+
+.add-box button {
+  padding: 5px 15px;
+  background-color: var(--color3);
+  margin-left: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15pt;
+}
+
+.list-box {
+  position: relative;
+  width: 60%;
+  left: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.genre-title, .author-title {
+  width: 60%;
+  margin-left: 10%;
   font-size: 30pt;
   color: var(--color4);
   font-weight: bold;
@@ -56,57 +104,19 @@ main img {
     0 0 15px var(--color1);
 }
 
-.genre {
+.genre, .author {
   margin-top: 10px;
   color: var(--color2);
   font-size: 20pt;
-  display: inline-block;
   align-items: center;
-  width: 30%;
   text-decoration: none;
 }
 
-.genre-box hr {
+.genre-container hr {
   margin: 10px 0;
   margin-left: 10%;
   border-radius: 50%;
-  width: 80%;
+  width: 60%;
   box-shadow: 0 0 5px var(--color1), 0 0 2px var(--color1),
     0 0 15px var(--color1);
-}
-
-.genre-box a::before,
-.genre-box a::after {
-  position: absolute;
-  top: 95px;
-  font-size: 12pt;
-  content: "";
-  opacity: 0;
-  transition: all 2s ease 0s;
-  z-index: 5;
-}
-
-.genre-box a:hover::before,
-.genre-box a:hover::after {
-  opacity: 1;
-}
-
-.genre-box a:first-of-type:hover::before {
-  content: "0 1 1 0 0 1 0 1";
-  left: 30%;
-}
-
-.genre-box a:last-of-type:hover::before {
-  content: "0 1 0 1 1 0 0 1";
-  left: 59%;
-}
-
-.genre-box a:first-of-type::before {
-  content: "1 0 0 1 1 0 1 0";
-  left: 30%;
-}
-
-.genre-box a:last-of-type::before {
-  content: "1 0 1 0 0 1 1 0";
-  left: 59%;
 }

@@ -42,7 +42,6 @@ public class Populator implements CommandLineRunner {
         LocalDate date1 = LocalDate.of(2015,1,1);
         LocalDate date2 = LocalDate.of(2015,2,2);
 
-
         Post post1 = new Post("Test", john, "This is a test post.", date1, frontEnd, html);
         Post post2 = new Post("Test2", jd, "This is a test post.", date2, backEnd, java);
 

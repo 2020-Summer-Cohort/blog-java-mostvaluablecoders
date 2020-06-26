@@ -5,15 +5,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class GenreStorage {
     private GenreRepository genreRepo;
+    private PostRepository postRepo;
 
-    public GenreStorage(GenreRepository genreRepo){
+    public GenreStorage(GenreRepository genreRepo, PostRepository postRepo){
         this.genreRepo = genreRepo;
+        this.postRepo = postRepo;
     }
-
-    public Genre getPostByGenre(String name) {
-        return genreRepo.findByName(name);
-    }
-
     public Iterable<Genre> findAllGenres() {
         return genreRepo.findAll();
     }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/setup&nav.css" />
-    <link rel="stylesheet" href="/css/all-tags.css" />
+    <link rel="stylesheet" href="/css/author.css" />
     <title>MostValuableCoders</title>
   </head>
   <body>
@@ -17,7 +17,7 @@
             <p class="logo-text-word">Coders</p>
           </span>
           <div class="logo-pic-div">
-            <a href="../">
+            <a href="../../">
               <img
                 class="logo-pic"
                 src="/images/mvc.png"
@@ -29,10 +29,10 @@
         </div>
       </section>
       <nav class="nav-menu">
-        <a href="../">Home</a>
-        <a href="../genres/">Genres</a>
-        <a href="../posts/">All Posts </a>
-        <a href="../posts/new-post/">New Post</a>
+        <a href="../../genres/">Genres</a>
+        <a href="../../posts/">All Posts </a>
+        <a href="../../tags/">All Tags</a>
+        <a href="../../posts/new-post/">New Post</a>
         <div class="bottom-bar"></div>
       </nav>
     </header>
@@ -41,12 +41,12 @@
       <article>
       </article>
       <aside>
-          <p class="title">All</p><p class="title">Tags</p>
-          <hr />
-         <ul class="tags-list">
-           <li class="post-name" th:each="tag: ${tags}">
-             <a th:href="@{'/tags/'+${tag.name}}" th:text="${tag.name}">
-               TagName
+       <p class="title" th:text="${author.name}">Author</p>
+         <hr />
+         <ul class="post-list">
+           <li class="post-name" th:each="post: ${author.posts}">
+             <a th:href="@{'/posts/'+${post.title}}" th:text="${post.title}">
+               Post Name
              </a>
            </li>
          </ul>

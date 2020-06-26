@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -12,7 +13,7 @@ public class HashTagController {
     private HashTagStorage hashTagStorage;
     private PostStorage postStorage;
 
-    public HashTagController(HashTagRepository hashTagRepo, HashTagStorage hashTagStorage, PostStorage postStorage){
+    public HashTagController(HashTagRepository hashTagRepo, HashTagStorage hashTagStorage, PostStorage postStorage) {
         this.hashTagRepo = hashTagRepo;
         this.hashTagStorage = hashTagStorage;
         this.postStorage = postStorage;
@@ -20,12 +21,24 @@ public class HashTagController {
 
     @GetMapping("tags/{name}")
     public String showSingleTag(@PathVariable String name, Model model) {
-        model.addAttribute("tagToDisplay", hashTagRepo.findByName(name));
+        model.addAttribute("tagToDisplay", hashTagStorage.findByName(name));
         return "tag-template";
     }
 
     @RequestMapping("tags/")
-    public String routeToAllTagsTemplate() {
+    public String routeToAllTagsTemplate(Model model) {
+        model.addAttribute("tags",hashTagStorage.findAllHashTags());
         return "all-tags-template";
     }
+
+    @PostMapping("tags/add")
+    public String addTag(String tag, String post) {
+        Post tagPost = postStorage.findPostByTitle(post);
+        HashTag hashtag = new HashTag(tag);
+        hashTagRepo.save(hashtag);
+        tagPost.addHashTag(hashtag);
+        postStorage.save(tagPost);
+        return "redirect:/posts/" + post;
+    }
+
 }

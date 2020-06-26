@@ -40,15 +40,17 @@ public class PostController {
         return "all-posts-template";
     }
 
+    @RequestMapping("posts/thanks")
+    public String routeToThankYouPage() {
+        return "thanks-template";
+    }
+
     @PostMapping("posts/add")
     public String addPost(String title, String author, String body, LocalDate publishDate, String genre) {
         Author postAuthor = authorStorage.findAuthorByName(author);
         Genre postGenre = genreStorage.findGenreByName(genre);
         postStorage.save(new Post(title, postAuthor, body, publishDate, postGenre));
-        return "redirect:/";
+        return "redirect:/posts/thanks";
     }
-//        reviewCheeseCategory));
-//        return "redirect:/categories/"+ reviewCheeseCategory.getCheeseType();
-//    }
 
 }

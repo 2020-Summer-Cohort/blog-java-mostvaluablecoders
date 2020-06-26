@@ -43,8 +43,38 @@
           <div class="genre-box">
             <div class="genre-title">Genres</div>
             <hr />
-<!--            <a th:each="genre: ${genres}" href="@{'genres'+${genre.name}"-->
-<!--               class="genre" th:text="${genre.name}">Genre Name</a>-->
+            <div class="list-box">
+              <a th:each="genre: ${allGenres}"
+                th:href="${genre.name}"
+                class="genre"
+                th:text="${genre.name}">Genre Name
+              </a>
+            </div>
+            <div class="add-box">
+              <h2>Add Genre</h2>
+              <form action="/genres/add" method="POST">
+                <input type="text" name="name" autocomplete="off" placeholder="Genre Name" required />
+                <button>ADD</button>
+              </form>
+            </div>
+          </div>
+          <div class="author-box">
+            <div class="author-title">Authors</div>
+            <hr />
+            <div class="list-box">
+              <a th:each="author: ${authors}"
+                th:href="@{'../authors/'+${author.name}}"
+                class="author"
+                th:text="${author.name}">Author Name
+              </a>
+            </div>
+            <div class="add-box">
+              <h2>Add Author</h2>
+              <form action="/authors/add" method="POST">
+                <input name="name" type="text" autocomplete="off" placeholder="Author Name" required />
+                <button>ADD</button>
+              </form>
+            </div>
           </div>
         </section>
 
