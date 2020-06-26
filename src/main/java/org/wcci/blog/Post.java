@@ -4,12 +4,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 public class Post {
@@ -25,7 +21,7 @@ public class Post {
     @ManyToOne
     private Genre genre;
     @ManyToMany
-    private Collection<HashTag> hashTags;
+    private Set<HashTag> hashTags;
 
     protected Post() {
     }
@@ -36,7 +32,7 @@ public class Post {
         this.body = body;
         this.publishDate = publishDate;
         this.genre = genre;
-        this.hashTags = new ArrayList<>(Arrays.asList(hashTags));
+        this.hashTags = new HashSet<>(Arrays.asList(hashTags));
     }
 
     public String getTitle() {
@@ -63,7 +59,7 @@ public class Post {
         return genre;
     }
 
-    public Collection<HashTag> getHashTags() {
+    public Set<HashTag> getHashTags() {
         return hashTags;
     }
 

@@ -18,4 +18,8 @@ public class HashTagStorage {
     public HashTag findByName(String name) {
         return hashTagRepo.findByName(name);
     }
+
+    public void save(HashTag hashtag) {
+        hashTagRepo.save(hashtag);
+    }
 }

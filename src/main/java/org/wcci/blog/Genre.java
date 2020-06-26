@@ -1,7 +1,6 @@
 package org.wcci.blog;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.Set;
 
 @Entity
@@ -11,7 +10,7 @@ public class Genre {
     private Long id;
     private String name;
     @OneToMany(mappedBy = "genre")
-    private Collection<Post> posts;
+    private Set<Post> posts;
 
 
     protected Genre(){}
@@ -30,7 +29,7 @@ public class Genre {
         return name;
     }
 
-    public Collection<Post> getPosts() {
+    public Set<Post> getPosts() {
         return posts;
     }
 

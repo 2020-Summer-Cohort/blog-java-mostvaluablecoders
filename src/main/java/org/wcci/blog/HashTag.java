@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import java.util.Collection;
 import java.util.Set;
 
 @Entity
@@ -15,7 +14,7 @@ public class HashTag {
     private Long id;
     private String name;
     @ManyToMany(mappedBy = "hashTags")
-    private Collection<Post> posts;
+    private Set<Post> posts;
 
     protected HashTag(){}
 
@@ -31,7 +30,7 @@ public class HashTag {
         return name;
     }
 
-    public Collection<Post> getPosts() {
+    public Set<Post> getPosts() {
         return posts;
     }
 }

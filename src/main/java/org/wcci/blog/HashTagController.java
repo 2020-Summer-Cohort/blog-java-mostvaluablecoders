@@ -9,12 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HashTagController {
-    private HashTagRepository hashTagRepo;
     private HashTagStorage hashTagStorage;
     private PostStorage postStorage;
 
-    public HashTagController(HashTagRepository hashTagRepo, HashTagStorage hashTagStorage, PostStorage postStorage) {
-        this.hashTagRepo = hashTagRepo;
+    public HashTagController(HashTagStorage hashTagStorage, PostStorage postStorage) {
         this.hashTagStorage = hashTagStorage;
         this.postStorage = postStorage;
     }
@@ -34,8 +32,12 @@ public class HashTagController {
     @PostMapping("tags/add")
     public String addTag(String tag, String post) {
         Post tagPost = postStorage.findPostByTitle(post);
-        HashTag hashtag = new HashTag(tag);
-        hashTagRepo.save(hashtag);
+
+        HashTag hashtag = hashTagStorage.findByName(tag);
+        if (hashtag == null) {
+            hashtag = new HashTag(tag);
+            hashTagStorage.save(hashtag);
+        }
         tagPost.addHashTag(hashtag);
         postStorage.save(tagPost);
         return "redirect:/posts/" + post;

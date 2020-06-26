@@ -21,6 +21,7 @@ article {
   min-height: 75vh;
   background-color: var(--color5);
   padding: 50px;
+  position: relative;
 }
 
 article * {
@@ -34,7 +35,7 @@ article * {
 
 .post-info {
   position: absolute;
-  right: 15%;
+  right: 50px;
   margin-top: 15px;
   font-size: 15pt;
 }

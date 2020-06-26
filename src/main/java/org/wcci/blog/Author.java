@@ -15,7 +15,7 @@ public class Author {
     private Long id;
     private String name;
     @OneToMany (mappedBy = "author")
-    private Collection<Post> posts;
+    private Set<Post> posts;
 
 
     public Author(String name) {
@@ -33,7 +33,7 @@ public class Author {
         return id;
     }
 
-    public Collection<Post> getPosts() {
+    public Set<Post> getPosts() {
         return posts;
     }
 }
