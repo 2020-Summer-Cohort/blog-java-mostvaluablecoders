@@ -39,8 +39,8 @@ public class Populator implements CommandLineRunner {
         authorRepo.save(john);
         authorRepo.save(jd);
 
-        LocalDate date1 = LocalDate.of(2015,1,1);
-        LocalDate date2 = LocalDate.of(2015,2,2);
+        LocalDate date1 = LocalDate.of(2020,6,24);
+        LocalDate date2 = LocalDate.of(2020,6,25);
 
         Post post1 = new Post("Test", john, "This is a test post.", date1, frontEnd, html);
         Post post2 = new Post("Test2", jd, "This is a test post.", date2, backEnd, java);

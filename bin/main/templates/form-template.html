@@ -58,7 +58,6 @@
 
             <div class="input-div">
               <select name="author" id="author" required>
-                <!-- USE THYMELEAF TO GENERATE OPTIONS -->
                 <option th:each="author: ${allAuthors}" 
                 th:value="${author.name}" th:text="${author.name}">Author</option>
               </select>
@@ -74,7 +73,6 @@
                 value="2020-06-29"
                 placeholder=" "
                 id="date"
-                autocomplete="off"
                 required
               />
               <label for="date">
@@ -84,7 +82,6 @@
 
             <div class="input-div">
               <select name="genre" id="genre" required>
-                <!-- USE THYMELEAF TO GENERATE OPTIONS -->
                 <option th:each="genre: ${allGenres}" 
                 th:value="${genre.name}" th:text="${genre.name}">Genre</option>
               </select>

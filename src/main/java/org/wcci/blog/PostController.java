@@ -46,10 +46,11 @@ public class PostController {
     }
 
     @PostMapping("posts/add")
-    public String addPost(String title, String author, String body, LocalDate publishDate, String genre) {
+    public String addPost(String title, String author, String body, String date, String genre) {
         Author postAuthor = authorStorage.findAuthorByName(author);
         Genre postGenre = genreStorage.findGenreByName(genre);
-        postStorage.save(new Post(title, postAuthor, body, publishDate, postGenre));
+        LocalDate postDate = LocalDate.parse(date);
+        postStorage.save(new Post(title, postAuthor, body, postDate, postGenre));
         return "redirect:/posts/thanks";
     }
 
